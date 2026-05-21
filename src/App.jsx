@@ -1,14 +1,11 @@
-import profile from "./data/profile"
-import ProjectCard from "./components/ProjectCard"
+import profile from "./data/profile";
+import ProjectCard from "./components/ProjectCard";
 
 function App() {
   return (
     <div className="bg-gray-100 min-h-screen">
-
       <div className="max-w-6xl mx-auto px-6 py-10">
-
         <div className="bg-white rounded-3xl shadow-xl p-10 mb-10">
-
           <h1 className="text-5xl font-bold mb-4">
             {profile.name}
           </h1>
@@ -21,13 +18,14 @@ function App() {
             {profile.about}
           </p>
 
+          {/* Experience */}
           <div className="mb-6">
             <h3 className="text-2xl font-bold mb-3">
               Experience
             </h3>
 
             <div className="flex flex-wrap gap-3">
-              {profile.experience.map((item, index) => (
+              {profile.experience?.map((item, index) => (
                 <span
                   key={index}
                   className="bg-gray-200 px-4 py-2 rounded-full"
@@ -38,6 +36,7 @@ function App() {
             </div>
           </div>
 
+          {/* Expertise */}
           <div className="mb-6">
             <h3 className="text-2xl font-bold mb-3">
               Expertise
@@ -55,6 +54,7 @@ function App() {
             </div>
           </div>
 
+          {/* Certifications */}
           <div className="mb-6">
             <h3 className="text-2xl font-bold mb-3">
               Certifications
@@ -69,11 +69,12 @@ function App() {
             </ul>
           </div>
 
+          {/* Links */}
           <div className="flex flex-wrap gap-4">
-
             <a
               href={profile.github}
               target="_blank"
+              rel="noreferrer"
               className="bg-black text-white px-6 py-3 rounded-xl"
             >
               GitHub
@@ -82,6 +83,7 @@ function App() {
             <a
               href={profile.linkedin}
               target="_blank"
+              rel="noreferrer"
               className="bg-blue-600 text-white px-6 py-3 rounded-xl"
             >
               LinkedIn
@@ -90,14 +92,15 @@ function App() {
             <a
               href={profile.resume}
               target="_blank"
+              rel="noreferrer"
               className="bg-green-600 text-white px-6 py-3 rounded-xl"
             >
               Resume
             </a>
-
           </div>
         </div>
 
+        {/* Projects */}
         <div>
           <h2 className="text-4xl font-bold mb-8">
             Projects
@@ -110,10 +113,9 @@ function App() {
             />
           ))}
         </div>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
